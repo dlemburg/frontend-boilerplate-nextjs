@@ -26,3 +26,11 @@ npm run dev
 5. Global State (not much after considering 1-4)
    - user, menu, websockets, settings, notifications, store, etc.,
    - example impl: `AppStateProvider`, `redux library`, etc.,
+
+### How this project implements the above
+
+- Wrap each page in own provider, application in provider
+- Use UI hooks for all UI interactions
+- Use `urql` for entity state
+
+That's it.
