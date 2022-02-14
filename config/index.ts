@@ -8,7 +8,7 @@ const ENV_MAP = {
   production: 'production',
 };
 
-const LOCAL_DEV_ENVIRONMENTS = [ENV_MAP.local, ENV_MAP.qa, ENV_MAP.production];
+const LOCAL_DEV_ENVIRONMENTS = [ENV_MAP.local, ENV_MAP.qa, ENV_MAP.uat];
 const env = process.env.NODE_ENV ?? '';
 
 export const isLocalDev = () => LOCAL_DEV_ENVIRONMENTS.includes(env);
