@@ -4,8 +4,8 @@ import Paper from '@mui/material/Paper';
 import Slide from '@mui/material/Slide';
 import Fade from '@mui/material/Fade';
 import Typography from '@mui/material/Typography';
-import { ModalVariant, ModalComponentProps, ModalCloseMechanism } from '.';
-import useClasses from './hooks/use-classes';
+import { ModalVariant, ModalComponentProps, ModalCloseMechanism } from '..';
+import useClasses from '../hooks/use-classes';
 
 const styles = (theme: Theme) => {
   return {

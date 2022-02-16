@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Table from '../../components/common/Table';
 import { useModal } from '../../state/ui/modal';
+import { useToaster } from '../../state/ui/toaster';
 
 const COLUMNS = [
   { label: 'name', getValue: (x) => x.name },
@@ -14,15 +15,20 @@ const DATA = [
 ];
 
 const Dashboard = () => {
-  const [{ isOpen }, { openModal }] = useModal();
+  const [{ isOpen: isModalOpen }, { openModal }] = useModal();
+  const [{ isOpen: isToasterOpen }, { openToaster }] = useToaster();
   const router = useRouter();
 
   useEffect(() => {
-    if (isOpen) return;
+    if (!isModalOpen) {
+      openModal({
+        body: <div style={{ height: 300, width: 300 }}>hello world</div>,
+      });
+    }
 
-    openModal({
-      body: <div style={{ height: 300, width: 300 }}>hello world</div>,
-    });
+    if (!isToasterOpen) {
+      openToaster({ body: 'Hello World!' });
+    }
   }, []);
 
   return (

@@ -1,5 +1,5 @@
 import React from 'react';
-import useModal from './hooks/use-modal';
+import useModal from '../hooks/use-modal';
 
 const WrappedModal = ({ Component, ...props }) => {
   const [modalState, modalDispatch] = useModal();
@@ -7,7 +7,7 @@ const WrappedModal = ({ Component, ...props }) => {
   return <Component {...props} modalState={modalState} {...modalDispatch} />;
 };
 
-export const withModal = Component => props => {
+export const withModal = (Component) => (props) => {
   return <WrappedModal {...props} Component={Component} />;
 };
 

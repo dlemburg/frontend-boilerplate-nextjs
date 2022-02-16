@@ -6,12 +6,12 @@ import Dialog, { DialogProps } from '@mui/material/Dialog';
 import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
 import Backdrop from '@mui/material/Backdrop';
-import { ModalComponentProps, ModalCloseMechanism } from '.';
-import useFocus from '../../common/hooks/use-focus';
-import { ModalAriaLabel } from './types';
-import useKeyboardDrag from './hooks/use-keyboard-drag';
-import useTabIndex from './hooks/use-tab-index';
-import useClasses from './hooks/use-classes';
+import { ModalComponentProps, ModalCloseMechanism } from '..';
+import useFocus from '../../../common/hooks/use-focus';
+import { ModalAriaLabel } from '../types';
+import useKeyboardDrag from '../hooks/use-keyboard-drag';
+import useTabIndex from '../hooks/use-tab-index';
+import useClasses from '../hooks/use-classes';
 
 type BaseModalProps = ModalComponentProps & DialogProps;
 

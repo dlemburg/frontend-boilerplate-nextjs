@@ -7,8 +7,8 @@ import {
   getModalActionKey,
   RouteParams,
 } from '../util/route-util';
-import SlideModal from '../SlideModal';
-import BaseModal from '../BaseModal';
+import SlideModal from '../components/SlideModal';
+import BaseModal from '../components/BaseModal';
 import {
   ModalVariant,
   OpenModalPayload,
