@@ -38,3 +38,4 @@ That's it.
 ### TODO
 
 - add to package.json scripts ` "predev": "npm run generate",`
+- Menu, Tabs, Theme
