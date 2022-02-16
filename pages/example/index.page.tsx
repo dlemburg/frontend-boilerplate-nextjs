@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { useRouter } from 'next/router';
 import Table from '../../components/common/Table';
 import { useModal } from '../../state/ui/modal';
 
@@ -14,6 +15,7 @@ const DATA = [
 
 const Dashboard = () => {
   const [{ isOpen }, { openModal }] = useModal();
+  const router = useRouter();
 
   useEffect(() => {
     if (isOpen) return;
@@ -25,9 +27,13 @@ const Dashboard = () => {
 
   return (
     <div>
-      <Table columns={COLUMNS} data={DATA} />
-      {process.env.NEXT_PUBLIC_GRAPHQL_URL}
       Example Page
+      <div>
+        Table Example
+        <Table columns={COLUMNS} data={DATA} />
+      </div>
+      <div>{router.locale}</div>
+      {process.env.NEXT_PUBLIC_GRAPHQL_URL}
     </div>
   );
 };
