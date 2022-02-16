@@ -34,3 +34,7 @@ npm run dev
 - Use `urql` for entity state
 
 That's it.
+
+### TODO
+
+- add to package.json scripts ` "predev": "npm run generate",`

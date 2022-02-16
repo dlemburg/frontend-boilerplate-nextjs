@@ -3,7 +3,7 @@ import type { AppProps } from 'next/app';
 import Head from '../components/layout/Head';
 import Footer from '../components/layout/Footer';
 import LayoutContainer from '../components/layout/LayoutContainer';
-import AppProviders from '../state/providers/AppProviders';
+import AppProviders from '../state/app/AppProviders';
 
 const NoopComponent = () => <></>;
 
