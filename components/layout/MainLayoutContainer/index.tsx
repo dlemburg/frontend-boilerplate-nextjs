@@ -113,7 +113,7 @@ export default function MainLayoutContainer(props) {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap component="div">
-            AEPS
+            {process.env.NEXT_PUBLIC_APP_NAME}
           </Typography>
         </Toolbar>
       </AppBar>

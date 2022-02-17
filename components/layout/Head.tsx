@@ -1,10 +1,11 @@
 import Head from 'next/head';
+import { FC } from 'react';
 
-const AppHead = (props) => {
+const AppHead: FC = (props) => {
   return (
     <Head>
-      <title>_AppName_</title>
-      <meta name="description" content="_AppName_ Application" />
+      <title>{process.env.NEXT_PUBLIC_APP_NAME}</title>
+      <meta name="description" content={`${process.env.NEXT_PUBLIC_APP_NAME} Application`} />
       <link rel="icon" href="/favicon.ico" />
     </Head>
   );
