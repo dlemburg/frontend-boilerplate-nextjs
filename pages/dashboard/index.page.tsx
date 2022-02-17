@@ -1,10 +1,5 @@
 const Dashboard = () => {
-  return (
-    <div>
-      {process.env.NEXT_PUBLIC_GRAPHQL_URL}
-      Dashboard Page
-    </div>
-  );
+  return <div>Dashboard Page</div>;
 };
 
 export default Dashboard;

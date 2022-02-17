@@ -34,12 +34,12 @@ const Dashboard = () => {
   return (
     <div>
       Example Page
-      <div>
+      <div style={{ marginTop: 50 }}>
         Table Example
         <Table columns={COLUMNS} data={DATA} />
       </div>
-      <div>{router.locale}</div>
-      {process.env.NEXT_PUBLIC_GRAPHQL_URL}
+      <div style={{ marginTop: 50 }}>Locale: {router.locale}</div>
+      <div>GraphQL url: {process.env.NEXT_PUBLIC_GRAPHQL_URL}</div>
     </div>
   );
 };
