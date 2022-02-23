@@ -4,10 +4,12 @@ import Footer from '../components/layout/Footer';
 import MainLayoutContainer from '../components/layout/MainLayoutContainer';
 import AppProviders from '../state/app/AppProviders';
 import { CustomAppProps } from '../types';
+import { useRouter } from 'next/router';
+import { useUser } from '../state/common/hooks/use-user';
 
 const NoopComponent = () => <></>;
 
-function App({ Component }: CustomAppProps) {
+function AuthenticatedApp({ Component, ...props }) {
   const {
     PageModuleStateProvider = NoopComponent,
     PageHead = Head,
@@ -16,16 +18,28 @@ function App({ Component }: CustomAppProps) {
   } = Component;
 
   return (
-    <AppProviders>
-      <PageModuleStateProvider>
-        <PageHead />
-        <PageLayoutContainer>
-          <Component />
-        </PageLayoutContainer>
-        <PageFooter />
-      </PageModuleStateProvider>
-    </AppProviders>
+    <PageModuleStateProvider>
+      <PageHead />
+      <PageLayoutContainer>{props.children}</PageLayoutContainer>
+      <PageFooter />
+    </PageModuleStateProvider>
   );
 }
 
-export default App;
+function App({ Component }: CustomAppProps) {
+  const { user, authenticated, loading } = useUser();
+  const router = useRouter();
+
+  if (!authenticated && loading) return <div>Loading...</div>;
+  if (!user && authenticated) router.push('/login');
+
+  return <AuthenticatedApp Component={Component} />;
+}
+
+const AppWrapper = (props) => (
+  <AppProviders>
+    <App {...props} />
+  </AppProviders>
+);
+
+export default AppWrapper;
